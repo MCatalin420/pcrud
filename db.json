@@ -1,0 +1,60 @@
+{
+  "boards": [
+    {
+      "id": 1,
+      "team_name": "Team 1",
+      "team_color": "Yellow",
+      "team_points": 34
+    },
+    {
+      "id": 2,
+      "team_name": "Team 2",
+      "team_color": "Yellow",
+      "team_points": 69
+    }
+  ],
+  "team_members": [
+    {
+      "id": 1,
+      "teamid": 1,
+      "name": "John",
+      "points": 70
+    },
+    {
+      "id": 2,
+      "teamid": 1,
+      "name": "Andrei",
+      "points": 53
+    },
+    {
+      "id": 3,
+      "teamid": 1,
+      "name": "Alex",
+      "points": 64
+    },
+    {
+      "teamid": 2,
+      "name": "Johhny",
+      "points": 6660,
+      "id": 4
+    },
+    {
+      "id": 5,
+      "teamid": 2,
+      "name": "Maria",
+      "points": 563
+    },
+    {
+      "teamid": 1,
+      "name": "George",
+      "points": 4,
+      "id": 6
+    },
+    {
+      "teamid": 2,
+      "name": "Jeezus",
+      "points": 5,
+      "id": 7
+    }
+  ]
+}
