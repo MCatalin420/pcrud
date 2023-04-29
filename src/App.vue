@@ -1,6 +1,7 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <button class="add" @click="addTeam()">Adauga echipa</button>
+  <button class="add" @click="choseWinner()">Alege Castigator</button>
   <div class="BoardsContainer">
   <Board v-for="board in boards" :key="board.id"  :board=board />
     
@@ -37,6 +38,12 @@ export default {
         team_points: 0,
       });
       this.boards = [...this.boards, res.data];
+    },
+    async choseWinner(){
+      const res = await axios.get(`http://localhost:3000/boards`);
+      const max = Math.max.apply(Math, res.data.map(function(o) { return o.team_points; }))
+      const winner = res.data.find(o => o.team_points === max);
+      alert(`Echipa castigatoare este ${winner.team_name} cu ${winner.team_points} puncte`);
     }
   },
   components: {

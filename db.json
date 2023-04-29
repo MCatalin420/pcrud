@@ -2,7 +2,7 @@
   "boards": [
     {
       "id": 1,
-      "team_name": "Team 1",
+      "team_name": "Pisicile Salbatice 2",
       "team_color": "Yellow",
       "team_points": 34
     },
@@ -11,6 +11,12 @@
       "team_name": "Team 2",
       "team_color": "Yellow",
       "team_points": 69
+    },
+    {
+      "team_name": "Team 3",
+      "team_color": "Red",
+      "team_points": 0,
+      "id": 3
     }
   ],
   "team_members": [
@@ -18,7 +24,7 @@
       "id": 1,
       "teamid": 1,
       "name": "John",
-      "points": 70
+      "points": 65
     },
     {
       "id": 2,
@@ -30,7 +36,7 @@
       "id": 3,
       "teamid": 1,
       "name": "Alex",
-      "points": 64
+      "points": 65
     },
     {
       "teamid": 2,
@@ -42,19 +48,25 @@
       "id": 5,
       "teamid": 2,
       "name": "Maria",
-      "points": 563
-    },
-    {
-      "teamid": 1,
-      "name": "George",
-      "points": 4,
-      "id": 6
+      "points": 567
     },
     {
       "teamid": 2,
       "name": "Jeezus",
-      "points": 5,
+      "points": 8,
       "id": 7
+    },
+    {
+      "teamid": 1,
+      "name": "Alin",
+      "points": 3,
+      "id": 8
+    },
+    {
+      "teamid": 3,
+      "name": "fsdf",
+      "points": 4,
+      "id": 9
     }
   ]
 }

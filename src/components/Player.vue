@@ -2,9 +2,8 @@
    <tr>
           <td>{{ this.player.name }}</td>
           <td>{{ this.player.points }}</td>
-          <td><button @click="addPoint()">+</button></td>
-          <td><button @click="removePoint()">-</button></td>
-          <td><button >X</button></td>
+          <td><button @click="addPoint()">+</button><button @click="removePoint()">-</button></td>
+          <td><button @click="removePlayer()">X</button></td>
         </tr>
 </template>
 
@@ -30,6 +29,11 @@ export default {
         points: this.player.points - 1
       });
       this.player.points--
+    },
+    async removePlayer() {
+            const res = await axios.delete(`http://localhost:3000/team_members/${this.player.id}`);
+            this.$parent.players.splice(this.index, 1);
+      
     }
   }
   

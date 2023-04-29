@@ -2,14 +2,14 @@
   <div class="container">
     <table>
       <thead>
-        <Modal v-show="isVisible">
+        <!-- <Modal v-show="isVisible">
             <tr>
               <td><button @click="addPlayer(playerName)">Adauga</button></td>
               <td><input v-model="playerName" type="text" placeholder="Nume jucator"></td>
             </tr>
-          </Modal>
+          </Modal> -->
         <tr>
-          <td><button @click="revealAddPlayer()">Adauga jucator</button></td>
+          <td><button @click="addPlayer()">Adauga jucator</button></td>
           <td><button @click="deleteTeam()">Sterge echipa</button></td>
           <td><button @click="changeName()">Schimba nume</button></td>
         </tr>
@@ -28,7 +28,7 @@
           <td><button @click="addPoint()">+</button></td>
           <td><button>-</button></td>
         </tr> -->
-        <Player v-for="(player,index) in this.players" :key="points" :player="player" :index="index"/>
+        <Player v-for="(player,index) in this.players" :key="index" :player="player" :index="index"/>
         <tr>Total: {{ board.team_points }}</tr>
       </tbody>
     </table>
@@ -66,20 +66,26 @@ export default {
     methods: {
         async deleteTeam() {
             axios.delete(`http://localhost:3000/boards/${this.board.id}`);
-            window.location.reload();
+            
+            this.$parent.boards.pop();
         },
         components: {
             Player,
         },
-        revealAddPlayer() {
-          this.isVisible = !this.isVisible;
-        },
-        addPlayer(playerName){
-          this.isVisible = !this.isVisible;
-          axios.post(`http://localhost:3000/team_members/`, {
+
+       async addPlayer(playerName){
+          const newPlayerName = prompt("Introduceti numele jucatorului");
+          const res =  await axios.post(`http://localhost:3000/team_members/`, {
             teamid: this.board.id,
-            name:playerName,
+            name:newPlayerName,
             points:0,
+          });
+          this.players = [...this.players, res.data];//window.location.reload();            
+      },
+      async changeName(){
+          const newName = prompt("Introduceti noul nume al echipei");
+          axios.patch(`http://localhost:3000/boards/${this.board.id}`, {
+            team_name: newName,
           });
           window.location.reload();
         }
