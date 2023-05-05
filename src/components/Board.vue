@@ -3,21 +3,23 @@
     <table>
       <thead>
         <tr>
-          <th colspan="3">{{ board.team_name }}</th>
+          <th class="team-title" colspan="3"><h1>{{ board.team_name }}</h1></th>
+        </tr>
+        <tr><td colspan="3" class="score">SCORE {{this.board.team_points}}</td></tr>
+        <tr>
+          <td><button class="op" @click="addPlayer()">ADD</button></td>
+          <td><button class="op" @click="deleteTeam()">DELETE</button></td>
+          <td><button class="op" @click="changeName()">EDIT</button></td>
         </tr>
         <tr>
-          <td><button class="op" @click="addPlayer()"><img src="../assets/icons8-add-male-user.svg"></button>></td>
-          <td><button class="op" @click="deleteTeam()"><img src="https://img.icons8.com/pastel-glyph/64/null/trash.png"/></button></td>
-          <td><button class="op" @click="changeName()"><img src="https://img.icons8.com/pastel-glyph/64/null/edit--v1.png"/></button></td>
-        </tr>
-        <tr>
-          <td>JUCATOR</td>
-          <td>PUNCTE</td>
+          <td>PLAYER</td>
+          <td>POINTS</td>
+          <td>TOOLS</td>
         </tr>
       </thead>
       <tbody>
         <Player v-for="(player,index) in this.players" :key="index" :player="player" :index="index"/>
-        <tr> Score: {{this.board.team_points}} </tr>
+        
         <tr></tr>
       </tbody>
     </table>
@@ -42,6 +44,7 @@ export default {
         isVisible: ref(false),
         playerName: ref(''),
         totalscore: ref(this.board.team_points),
+        fixID: ref(false),
       }
     },
     async created() {
@@ -55,7 +58,7 @@ export default {
     },
     methods: {
         async deleteTeam() {
-            axios.delete(`http://localhost:3000/boards/${this.board.id}`);
+            
             //make a for loop that loops through this.players 
             //and deletes all the players with the same teamid
             for(let i = 0; i < this.players.length; i++){
@@ -63,12 +66,26 @@ export default {
                 axios.delete(`http://localhost:3000/team_members/${this.players[i].id}`);
               }
             }
-            this.$parent.boards.pop();
-            this.$parent.count--;
+            axios.delete(`http://localhost:3000/boards/${this.board.id}`);
+            
+            for(let i = 0; i < this.$parent.boards.length; i++){
+              if(this.$parent.boards[i].id == this.board.id){
+                this.$parent.boards.splice(i,1);
+                fixID = true;
+
+              }
+              if (this.fixID) {
+                this.$parent.boards[i].id = i-1;
+                axios.patch(`http://localhost:3000/boards/${this.$parent.boards[i].id}`, {
+                  id: i-1,
+                });
+              
+              }
+            }
+            this.$parent.count = this.$parent.boards.length;
+           
         },
-        addTeam() {
-            this.$parent.addTeam();
-        },
+        
         components: {
             Player,
         },
@@ -80,15 +97,16 @@ export default {
             name:newPlayerName,
             points:0,
           });
-          this.players = [...this.players, res.data];//window.location.reload();            
+          this.players = [...this.players, res.data]; //window.location.reload();            
       },
       async changeName(){
           const newName = prompt("Introduceti noul nume al echipei");
           axios.patch(`http://localhost:3000/boards/${this.board.id}`, {
             team_name: newName,
           });
-          window.location.reload();
+          this.$parent.boards[this.$parent.boards.indexOf(this.board)].team_name = newName;
         }
+        
     },
     components: { Player }
 };
@@ -99,33 +117,41 @@ export default {
 @import url('https://fonts.cdnfonts.com/css/calculator');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Press+Start+2P&family=Sigmar&display=swap');
 
-:root {
-  --hovercolor: hsl(0, 100%, 75%);
+.team-title {
+  font-family: Lobster, cursive;
+  color: white;
+  font-size:1.5rem;
+  
+ 
+
 }
 table {
   border-collapse: collapse;
-  width: 50%;
-  font-family: 'Press Start 2P', cursive;
+  margin-top: 0;
+  
+
 }
-th,
-td {
+
+th,td {
   padding: 15px;
-  padding-top: 0.2rem;
+  padding-top: 0.8rem;
 }
 thead {
   font-family: 'Press Start 2P', cursive;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 1%, rgba(27,99,150,1) 31%, rgba(104,220,226,1) 100%);
+  color: rgb(254, 198, 129);
+ 
 }
 .container{
-  background-color: hsla(0, 100%, 59%, 0.353);
-  border: #42b983 2px solid;
+
   padding: 0px 0px 0px 0px;
   border-radius: 10px;
   color: hsl(0, 0%, 0%);
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
   font-size: 1rem;
-  height: 30rem;
   
 }
 .op{
@@ -134,9 +160,16 @@ thead {
  background-color: transparent;
   width: auto;
  border: none;
- color: hsl(0, 0%, 0%);
+ color: white;
+ font-size: 2rem;
 }
 .op:hover{
-  color : white;
+  color:#ff56d8;
+  text-decoration: underline;
+}
+.score {
+  color: fuchsia;
+  font-size: 1.5rem;
+  
 }
 </style>

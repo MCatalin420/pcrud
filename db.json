@@ -1,50 +1,59 @@
 {
   "boards": [
     {
-      "team_name": "Team 1",
-      "team_points": 6,
+      "team_name": "Koa'ye Ma Ri",
+      "team_points": 35,
       "id": 1
     },
     {
-      "team_name": "Team 2",
-      "team_points": 5,
+      "team_name": "SH diff",
+      "team_color": "green",
+      "team_points": 15,
       "id": 2
     },
     {
-      "team_name": "Team 3",
-      "team_points": 0,
+      "team_name": "Team ",
+      "team_color": "green",
+      "team_points": 7,
       "id": 3
-    },
-    {
-      "team_name": "Team 4",
-      "team_points": 0,
-      "id": 4
     }
   ],
   "team_members": [
     {
       "teamid": 1,
-      "name": "ERick",
-      "points": 5,
-      "id": 1
-    },
-    {
-      "teamid": 2,
-      "name": "dfjkshf",
-      "points": 5,
-      "id": 2
-    },
-    {
-      "teamid": 3,
-      "name": null,
-      "points": 0,
-      "id": 3
+      "name": "rtergd",
+      "points": 8,
+      "id": 10
     },
     {
       "teamid": 1,
-      "name": null,
-      "points": 0,
-      "id": 4
+      "name": "dfssdf",
+      "points": 7,
+      "id": 12
+    },
+    {
+      "teamid": 1,
+      "name": "fgdgdf",
+      "points": 10,
+      "id": 13
+    },
+    {
+      "teamid": 2,
+      "name": "sh dif 1",
+      "points": 8,
+      "id": 14
+    },
+    {
+      "teamid": 2,
+      "name": "sh dif 2",
+      "points": 7,
+      "id": 15
+    },
+    {
+      "teamid": 3,
+      "name": "lkros",
+      "points": 3,
+      "id": 17
     }
   ]
 }
