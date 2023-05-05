@@ -1,72 +1,50 @@
 {
   "boards": [
     {
-      "id": 1,
-      "team_name": "Pisicile Salbatice 2",
-      "team_color": "Yellow",
-      "team_points": 34
+      "team_name": "Team 1",
+      "team_points": 6,
+      "id": 1
     },
     {
-      "id": 2,
       "team_name": "Team 2",
-      "team_color": "Yellow",
-      "team_points": 69
+      "team_points": 5,
+      "id": 2
     },
     {
       "team_name": "Team 3",
-      "team_color": "Red",
       "team_points": 0,
       "id": 3
+    },
+    {
+      "team_name": "Team 4",
+      "team_points": 0,
+      "id": 4
     }
   ],
   "team_members": [
     {
-      "id": 1,
       "teamid": 1,
-      "name": "John",
-      "points": 65
-    },
-    {
-      "id": 2,
-      "teamid": 1,
-      "name": "Andrei",
-      "points": 53
-    },
-    {
-      "id": 3,
-      "teamid": 1,
-      "name": "Alex",
-      "points": 65
+      "name": "ERick",
+      "points": 5,
+      "id": 1
     },
     {
       "teamid": 2,
-      "name": "Johhny",
-      "points": 6660,
-      "id": 4
-    },
-    {
-      "id": 5,
-      "teamid": 2,
-      "name": "Maria",
-      "points": 567
-    },
-    {
-      "teamid": 2,
-      "name": "Jeezus",
-      "points": 8,
-      "id": 7
-    },
-    {
-      "teamid": 1,
-      "name": "Alin",
-      "points": 3,
-      "id": 8
+      "name": "dfjkshf",
+      "points": 5,
+      "id": 2
     },
     {
       "teamid": 3,
-      "name": "fsdf",
-      "points": 4,
-      "id": 9
+      "name": null,
+      "points": 0,
+      "id": 3
+    },
+    {
+      "teamid": 1,
+      "name": null,
+      "points": 0,
+      "id": 4
     }
   ]
 }
