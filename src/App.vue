@@ -1,13 +1,13 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <img alt="scoreboard" class="logo" src="./assets/logo.png" />
   <div class="headerButtons">
     
     
   </div>
 
   <div class="BoardsContainer">
-    <button class="add" @click="addTeam()">ADD TEAM</button>
-    <button class="add" @click="choseWinner()">WINNER</button>
+    <button class="add" @click="addTeam()">{{ label[0] }}</button>
+    <button class="add" @click="choseWinner()">{{ label[1] }}</button>
     <Board ref="boardComponent" v-for="board in this.boards" :key="board.id" :board=board />
   </div>
 </template>
@@ -24,6 +24,7 @@ export default {
       boards: [],
       count: ref(0),
       counter: ref(0),
+      label: ["<ADD TEAM>","<WINNER>"],
       
 
 
@@ -68,6 +69,7 @@ export default {
       const res = await axios.get(`http://localhost:3000/boards`);
       const max = Math.max.apply(Math, res.data.map(function (o) { return o.team_points; }))
       const winner = res.data.find(o => o.team_points === max);
+    
 
       alert(`Echipa castigatoare este ${winner.team_name} cu ${winner.team_points} puncte`);
     }
@@ -96,7 +98,7 @@ button {
 
 button:hover {
   background: transparent;
-  color: pink;
+  color: yellow;
   cursor: pointer;
 }
 
@@ -117,7 +119,8 @@ button:hover {
   margin: auto;
   margin-top: 0;
   padding: 5rem;
-  padding-top: 2%;
+  padding-top: 0;
+  
   display: grid;
   grid-template-columns: 30rem 30rem;
   grid-column-gap: 1rem;
@@ -127,14 +130,22 @@ button:hover {
 
 .add {
   margin: 0 auto;
-  display: block;
   font-size: 2.5rem;
   width: -webkit-fill-available;
-  background-color: #fe06af;
+  color: #fe06af;
+  border:none;
+  background: none;
+  font-family: 'Press Start 2P', cursive;
+  padding: 1rem;
+  -webkit-text-stroke: 2px rgba(104, 220, 226, 1);
 }
 
 .winnerClass {
   border: 55px solid #fe06af;
+
+}
+
+.logo {
 
 }
 

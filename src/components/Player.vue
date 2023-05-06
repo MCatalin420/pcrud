@@ -73,7 +73,10 @@ button {
   display: inline-flex;
   font-size: 3em;
 }
-
+button svg g{
+  fill:#ff56d8;
+  transition: 0.5s;
+}
 .name {
   font-size: 3rem;
   font-family: 'Bebas Neue', cursive;
@@ -82,17 +85,22 @@ button {
 
 .score {
   font-size: 2em;
-  color: #ff56d8;
+  color: #ffe818;
   font-family: 'Press Start 2P', cursive;
+  /*floating */
 }
 tr {
   border-bottom: 1px solid rgba(104,220,226,1);
   padding-bottom: 1rem;
   background-color: black;
+  transition: 0.5s;
 }
 tr:hover{
-  background-color: lightslategray;
+  background-color: rgba(104,220,226,1);
+  -webkit-box-shadow: inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+  box-shadow: inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
   cursor: pointer;
+
 }
 .buttons button{
   font-size: 3.2rem;
