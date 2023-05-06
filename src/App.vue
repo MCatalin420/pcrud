@@ -93,6 +93,7 @@ export default {
 
 button {
   padding: 0 2.5rem 0 3rem;
+  transition: 0.5s;
 
 }
 

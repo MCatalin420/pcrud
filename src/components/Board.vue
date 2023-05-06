@@ -6,8 +6,25 @@
         <tr>
 
           <th class="team-title" colspan="3">
-            <div><button class="op" @click="deleteTeam()"><svg xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="50px" height="50px"
+            
+            <div class="boardbutton">
+              <!-- <h4>Scoreboard</h4> -->
+              <button class="op " @click="changeName()"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                  width="30" height="30" viewBox="0,0,256,256">
+                  <g fill="orange" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                    font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                    style="mix-blend-mode: normal">
+                    <g transform="scale(5.12,5.12)">
+                      <path
+                        d="M44.34375,2c-0.94141,0 -1.91016,0.34766 -2.625,1.0625l-1.34375,1.375l5.1875,5.1875c-0.00391,0.00391 1.375,-1.34375 1.375,-1.34375c1.43359,-1.43359 1.43359,-3.78516 0,-5.21875c-0.71875,-0.71875 -1.65234,-1.0625 -2.59375,-1.0625zM38.75,5.9375l-22.71875,22.71875l-0.0625,0.3125l-0.9375,4.84375l-0.3125,1.46875l1.46875,-0.3125l4.84375,-0.9375l0.3125,-0.0625l22.71875,-22.71875l-1.4375,-1.40625l-22.25,22.21875l-2.4375,-2.4375l22.21875,-22.25zM3,10c-0.55469,0 -1,0.44922 -1,1v36c0,0.55078 0.44531,1 1,1h36c0.55469,0 1,-0.44922 1,-1v-29l-2,2v26h-34v-34h26l2,-2z">
+                      </path>
+                    </g>
+                  </g>
+                </svg></button>
+
+              <button class="op " @click="deleteTeam()"><svg xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="30px" height="30px"
                   fill-rule="nonzero">
                   <g fill="red" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                     stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
@@ -20,24 +37,12 @@
                     </g>
                   </g>
                 </svg></button>
-              
-                <button class="op" @click="changeName()"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50"
-                height="50" viewBox="0,0,256,256">
-                <g fill="yellow" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
-                  stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
-                  font-family="none" font-weight="none" font-size="none" text-anchor="none"
-                  style="mix-blend-mode: normal">
-                  <g transform="scale(2,2)">
-                    <path
-                      d="M79.33594,15.66797c-1.27148,-0.0457 -2.56094,0.09414 -3.83594,0.43164c-3.4,0.9 -6.20039,3.09961 -7.90039,6.09961l-3.59961,6.5c-0.8,1.4 -0.30039,3.30156 1.09961,4.10156l17.30078,10c0.5,0.3 1,0.39844 1.5,0.39844c0.3,0 0.49883,0.00039 0.79883,-0.09961c0.8,-0.2 1.40078,-0.70039 1.80078,-1.40039l3.69922,-6.5c1.7,-3 2.20078,-6.49844 1.30078,-9.89844c-0.9,-3.4 -3.09961,-6.20039 -6.09961,-7.90039c-1.875,-1.0625 -3.94531,-1.65625 -6.06445,-1.73242zM60.09766,38.12695c-0.96875,0.07422 -1.89844,0.59766 -2.39844,1.47266l-30.19922,52.40039c-3.4,5.8 -5.29922,12.30039 -5.69922,18.90039l-0.80078,12.90039c-0.1,1.1 0.5,2.19883 1.5,2.79883c0.5,0.3 1,0.40039 1.5,0.40039c0.6,0 1.19922,-0.2 1.69922,-0.5l10.80078,-7.09961c5.5,-3.7 10.2,-8.60039 13.5,-14.40039l30.30078,-52.40039c0.8,-1.4 0.29844,-3.29961 -1.10156,-4.09961c-1.4,-0.8 -3.29961,-0.30039 -4.09961,1.09961l-30.29883,52.40039c-2.9,4.9 -6.90117,9.20039 -11.70117,12.40039l-5.79883,3.79883l0.39844,-6.89844c0.3,-5.7 2.00039,-11.30078 4.90039,-16.30078l30.30078,-52.40039c0.8,-1.4 0.30039,-3.29961 -1.09961,-4.09961c-0.525,-0.3 -1.12188,-0.41758 -1.70312,-0.37305zM49,121c-1.7,0 -3,1.3 -3,3c0,1.7 1.3,3 3,3h40c1.7,0 3,-1.3 3,-3c0,-1.7 -1.3,-3 -3,-3zM104,121c-1.65685,0 -3,1.34315 -3,3c0,1.65685 1.34315,3 3,3c1.65685,0 3,-1.34315 3,-3c0,-1.65685 -1.34315,-3 -3,-3z">
-                    </path>
-                  </g>
-                </g>
-              </svg></button>
+
+
             </div>
 
             <h1>{{ board.team_name }}</h1>
-            
+
 
           </th>
         </tr>
@@ -59,7 +64,7 @@
         </tr>
       </thead>
       <tbody>
-        <Player v-for="(player, index) in this.players" :key="index" :player="player" :index="index" />
+        <Player class="playerclass" v-for="(player, index) in this.players" :key="index" :player="player" :index="index" />
 
         <tr></tr>
       </tbody>
@@ -162,6 +167,33 @@ export default {
 @import url('https://fonts.cdnfonts.com/css/calculator');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Press+Start+2P&family=Sigmar&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+.left {}
+
+.boardbutton {
+  text-align: right;
+  margin: 0;
+  background-color: #381838;
+ 
+  border-right: none;
+  border-top:none;
+  box-shadow: 0px 17px 16px -4px rgba(0,0,0,0.1);
+
+}
+
+.boardbutton button {
+  padding: 2%;
+ 
+}
+
+.boardbutton h4 {
+  display: contents;
+  font-family: 'Press Start 2P', cursive;
+  color: #855b77;
+  -webkit-text-stroke: 1px #b664b2;
+  text-align: left;
+  padding-right: 10px;
+}
 
 .labels {
   font-family: 'Press Start 2P', cursive;
@@ -266,4 +298,28 @@ thead {
 .close {
   text-align: right;
   padding-right: 15px;
-}</style>
+}
+
+.playerclass {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+svg{
+  transition: 0.3s;
+}
+.boardbutton svg:hover {
+  filter: hue-rotate(180deg);
+  -webkit-filter: hue-rotate(180deg);
+}
+svg:active{
+  filter: hue-rotate(90deg);
+  -webkit-filter: hue-rotate(90deg);
+}
+</style>

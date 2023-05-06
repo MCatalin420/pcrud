@@ -111,6 +111,7 @@ button:hover{
   cursor: pointer;
   
 }
+
 svg:hover {
   filter: hue-rotate(180deg);
   -webkit-filter: hue-rotate(180deg);
