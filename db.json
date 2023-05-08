@@ -1,66 +1,78 @@
 {
   "boards": [
     {
-      "team_name": "TEst team",
-      "team_color": "green",
-      "team_points": 9,
+      "team_name": "test1123",
+      "team_win": false,
+      "team_points": 20,
       "id": 5
     },
     {
-      "team_name": "test 2",
-      "team_color": "green",
-      "team_points": 15,
-      "id": 6
+      "team_name": "Team ",
+      "team_win": false,
+      "team_points": 21,
+      "id": 7
+    },
+    {
+      "team_name": "LEgion",
+      "team_win": false,
+      "team_points": 11,
+      "id": 8
     },
     {
       "team_name": "Team ",
       "team_color": "green",
       "team_points": 0,
-      "id": 7
+      "id": 9
     }
   ],
   "team_members": [
     {
       "teamid": 5,
       "name": "dfsdf",
-      "points": 6,
+      "points": 9,
       "id": 23
     },
     {
-      "teamid": 6,
-      "name": "efewefs",
-      "points": 12,
-      "id": 24
-    },
-    {
-      "teamid": 5,
-      "name": "Andrei",
-      "points": 3,
-      "id": 29
-    },
-    {
-      "teamid": 6,
-      "name": "eric",
-      "points": 3,
-      "id": 34
-    },
-    {
       "teamid": 7,
       "name": "Andrei",
-      "points": 0,
+      "points": 16,
       "id": 35
     },
     {
-      "teamid": 7,
-      "name": "Alex",
-      "points": 0,
-      "id": 36
+      "teamid": 5,
+      "name": "Ion",
+      "points": 6,
+      "id": 38
     },
     {
-      "teamid": 5,
-      "name": "Alexandru",
+      "teamid": 8,
+      "name": "KEvin",
+      "points": 3,
+      "id": 41
+    },
+    {
+      "teamid": 8,
+      "name": "andrei",
+      "points": 2,
+      "id": 42
+    },
+    {
+      "teamid": 7,
+      "name": "catalin",
       "points": 0,
-      "id": 37
+      "id": 45
+    },
+    {
+      "teamid": 8,
+      "name": "test",
+      "points": 3,
+      "id": 46
+    },
+    {
+      "teamid": 9,
+      "name": "nvnb",
+      "points": 0,
+      "id": 47
     }
   ]
 }

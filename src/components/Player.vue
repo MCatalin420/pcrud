@@ -94,9 +94,13 @@ tr {
   padding-bottom: 1rem;
   background-color: black;
   transition: 0.5s;
+  
+}
+td{
+  max-height: 80px;
 }
 tr:hover{
-  background-color: rgba(104,220,226,1);
+  background-color: #381838;
   -webkit-box-shadow: inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
   box-shadow: inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
   cursor: pointer;

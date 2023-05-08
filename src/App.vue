@@ -133,7 +133,7 @@ button:hover {
   margin: 0 auto;
   font-size: 2.5rem;
   width: -webkit-fill-available;
-  color: #fe06af;
+  color: #5E17EB;
   border:none;
   background: none;
   font-family: 'Press Start 2P', cursive;
