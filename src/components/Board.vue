@@ -131,7 +131,10 @@ export default {
       }
       this.$parent.count = this.$parent.boards.length;
 
-    },
+
+    }
+
+    ,
 
     components: {
       Player,
@@ -225,7 +228,7 @@ table {
 thead {
   font-family: 'Press Start 2P', cursive;
   background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 1%, rgba(27, 99, 150, 1) 31%, rgba(104, 220, 226, 1) 100%);
+  background-image: url("../assets/cardbg.png");
 
 
 }
@@ -302,6 +305,7 @@ thead {
 
 .playerclass {
   animation: 1s ease-out 0s 1 slideInFromLeft;
+  
 }
 @keyframes slideInFromLeft {
   0% {
